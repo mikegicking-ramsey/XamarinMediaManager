@@ -29,6 +29,7 @@
     <None Include="Resources\*.cs" />
     <Compile Remove="Resources\*.cs" />
     <None Include="readme.txt" pack="true" PackagePath="." />
+    <Compile Remove="Platforms\Android\MediaSession\MediaSessionCallback.cs" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
@@ -40,7 +41,6 @@
     <None Remove="Platforms\Net\**\*.cs" />
     <None Remove="Platforms\Wpf\**\*.cs" />
     <Compile Include="Platforms\Net\**\*.cs" />
-    <Compile Include="Platforms\Wpf\**\*.cs" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -54,10 +54,7 @@
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('uap')) ">
     <Compile Include="Platforms\Windows\**\*.cs" />
-    <Compile Include="Platforms\Uap\**\*.cs" />
-    <Page Include="Platforms\Uap\**\*.xaml" SubType="Designer" Generator="MSBuild:Compile" />
     <None Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
-    <Compile Update="**\*.xaml.cs" DependentUpon="%(Filename)" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('xamarin.ios')) ">
@@ -74,7 +71,6 @@
     <None Remove="Platforms\Mac\**\*.cs" />
     <None Remove="Platforms\Xamarin\**\*.cs" />
     <Compile Include="Platforms\Apple\**\*.cs" />
-    <Compile Include="Platforms\Mac\**\*.cs" />
     <Compile Include="Platforms\Xamarin\**\*.cs" />
   </ItemGroup>
 
@@ -114,8 +110,15 @@
   <ItemGroup Condition=" $(TargetFramework.StartsWith('tizen')) ">
     <None Remove="Platforms\Tizen\**\*.cs" />
     <None Remove="Platforms\Xamarin\**\*.cs" />
-    <Compile Include="Platforms\Tizen\**\*.cs" />
     <Compile Include="Platforms\Xamarin\**\*.cs" />
   </ItemGroup>
   
+  <ItemGroup>
+    <Compile Update="Playback\BluetoothControls.cs">
+      <SubType></SubType>
+    </Compile>
+    <Compile Update="Playback\IBluetoothControls.cs">
+      <SubType></SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

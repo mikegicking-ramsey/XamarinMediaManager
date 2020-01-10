@@ -75,6 +75,19 @@ namespace MediaManager
             set => SetProperty(ref _mediaQueue, value);
         }
 
+        protected IBluetoothControls _bluetoothControls;
+        public virtual IBluetoothControls BluetoothControls
+        {
+            get
+            {
+                if (_bluetoothControls == null)
+                    _bluetoothControls = new BluetoothControls();
+
+                return _bluetoothControls;
+            }
+            set => SetProperty(ref _bluetoothControls, value);
+        }
+
         public virtual void Init()
         {
             IsInitialized = true;
