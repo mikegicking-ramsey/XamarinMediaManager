@@ -1,4 +1,5 @@
-﻿using MediaManager.Notifications;
+﻿using System;
+using MediaManager.Notifications;
 using MediaPlayer;
 
 namespace MediaManager.Platforms.Apple.Notifications
@@ -157,75 +158,160 @@ namespace MediaManager.Platforms.Apple.Notifications
             MPNowPlayingInfoCenter.DefaultCenter.NowPlaying = nowPlayingInfo;
         }
 
+
         protected virtual MPRemoteCommandHandlerStatus SkipBackwardCommand(MPRemoteCommandEvent arg)
         {
-            MediaManager.StepBackward();
+            if (MediaManager.BluetoothControls.SkipBackwardImpl != null)
+            {
+                MediaManager.BluetoothControls.SkipBackwardImpl.Invoke();
+            }
+            else
+            {
+                MediaManager.StepBackward();
+            }
             return MPRemoteCommandHandlerStatus.Success;
         }
 
         protected virtual MPRemoteCommandHandlerStatus SkipForwardCommand(MPRemoteCommandEvent arg)
         {
-            MediaManager.StepForward();
+            if (MediaManager.BluetoothControls.SkipForwardImpl != null)
+            {
+                MediaManager.BluetoothControls.SkipForwardImpl.Invoke();
+            }
+            else
+            {
+                MediaManager.StepForward();
+            }
             return MPRemoteCommandHandlerStatus.Success;
         }
 
         protected virtual MPRemoteCommandHandlerStatus StopCommand(MPRemoteCommandEvent arg)
         {
-            MediaManager.Stop();
+            if (MediaManager.BluetoothControls.StopImpl != null)
+            {
+                MediaManager.BluetoothControls.StopImpl.Invoke();
+            }
+            else
+            {
+                MediaManager.Stop();
+            }
             return MPRemoteCommandHandlerStatus.Success;
         }
 
         protected virtual MPRemoteCommandHandlerStatus SeekForwardCommand(MPRemoteCommandEvent arg)
         {
-            MediaManager.StepForward();
+            if (MediaManager.BluetoothControls.SeekForwardImpl != null)
+            {
+                MediaManager.BluetoothControls.SeekForwardImpl.Invoke();
+            }
+            else
+            {
+                MediaManager.StepForward();
+            }
             return MPRemoteCommandHandlerStatus.Success;
         }
 
         protected virtual MPRemoteCommandHandlerStatus SeekBackwardCommand(MPRemoteCommandEvent arg)
         {
-            MediaManager.StepBackward();
+            if (MediaManager.BluetoothControls.SeekBackwardImpl != null)
+            {
+                MediaManager.BluetoothControls.SeekBackwardImpl.Invoke();
+            }
+            else
+            {
+                MediaManager.StepBackward();
+            }
             return MPRemoteCommandHandlerStatus.Success;
         }
 
         protected virtual MPRemoteCommandHandlerStatus PreviousCommand(MPRemoteCommandEvent arg)
         {
-            MediaManager.PlayPrevious();
+            if (MediaManager.BluetoothControls.PreviousImpl != null)
+            {
+                MediaManager.BluetoothControls.PreviousImpl.Invoke();
+            }
+            else
+            {
+                MediaManager.PlayPrevious();
+            }
             return MPRemoteCommandHandlerStatus.Success;
         }
 
         protected virtual MPRemoteCommandHandlerStatus PauseCommand(MPRemoteCommandEvent arg)
         {
-            MediaManager.Pause();
+            if (MediaManager.BluetoothControls.PauseImpl != null)
+            {
+                MediaManager.BluetoothControls.PauseImpl.Invoke();
+            }
+            else
+            {
+                MediaManager.Pause();
+            }
             return MPRemoteCommandHandlerStatus.Success;
         }
 
         protected virtual MPRemoteCommandHandlerStatus NextCommand(MPRemoteCommandEvent arg)
         {
-            MediaManager.PlayNext();
+            if (MediaManager.BluetoothControls.NextImpl != null)
+            {
+                MediaManager.BluetoothControls.NextImpl.Invoke();
+            }
+            else
+            {
+                MediaManager.PlayNext();
+            }
             return MPRemoteCommandHandlerStatus.Success;
         }
 
         protected virtual MPRemoteCommandHandlerStatus ShuffleCommand(MPRemoteCommandEvent arg)
         {
-            MediaManager.ToggleShuffle();
+            if (MediaManager.BluetoothControls.ShuffleImpl != null)
+            {
+                MediaManager.BluetoothControls.ShuffleImpl.Invoke();
+            }
+            else
+            {
+                MediaManager.ToggleShuffle();
+            }
             return MPRemoteCommandHandlerStatus.Success;
         }
 
         protected virtual MPRemoteCommandHandlerStatus RepeatCommand(MPRemoteCommandEvent arg)
         {
-            MediaManager.ToggleRepeat();
+            if (MediaManager.BluetoothControls.RepeatImpl != null)
+            {
+                MediaManager.BluetoothControls.RepeatImpl.Invoke();
+            }
+            else
+            {
+                MediaManager.ToggleRepeat();
+            }
             return MPRemoteCommandHandlerStatus.Success;
         }
 
         protected virtual MPRemoteCommandHandlerStatus PlayCommand(MPRemoteCommandEvent arg)
         {
-            MediaManager.Play();
+            if (MediaManager.BluetoothControls.PlayImpl != null)
+            {
+                MediaManager.BluetoothControls.PlayImpl.Invoke();
+            }
+            else
+            {
+                MediaManager.Play();
+            }
             return MPRemoteCommandHandlerStatus.Success;
         }
 
         protected virtual MPRemoteCommandHandlerStatus PlayPauseCommand(MPRemoteCommandEvent arg)
         {
-            MediaManager.PlayPause();
+            if (MediaManager.BluetoothControls.PlayPauseImpl != null)
+            {
+                MediaManager.BluetoothControls.PlayPauseImpl.Invoke();
+            }
+            else
+            {
+                MediaManager.PlayPause();
+            }
             return MPRemoteCommandHandlerStatus.Success;
         }
     }
