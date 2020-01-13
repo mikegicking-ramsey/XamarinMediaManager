@@ -37,6 +37,8 @@ namespace MediaManager
 
         IMediaQueue Queue { get; set; }
 
+        IBluetoothControls BluetoothControls { get; set; }
+
         void Init();
 
         /// <summary>
