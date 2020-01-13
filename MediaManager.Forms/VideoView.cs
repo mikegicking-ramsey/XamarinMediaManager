@@ -295,10 +295,7 @@ namespace MediaManager.Forms
 
         private static async void OnVideoPlaceholderPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-#if !NETSTANDARD
-            if (newValue is Xamarin.Forms.ImageSource imageSource)
-                MediaManager.MediaPlayer.VideoPlaceholder = await imageSource.ToNative().ConfigureAwait(false);
-#endif
+
         }
 
         public void Dispose()
