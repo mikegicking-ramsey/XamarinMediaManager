@@ -20,6 +20,24 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>TRACE;PORTABLE;DEBUG;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Mobile|AnyCPU' ">
+    <IntermediateOutputPath>obj\Mobile</IntermediateOutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Mobile</OutputPath>
+    <DefineConstants>TRACE;PORTABLE;RELEASE</DefineConstants>
+    <DocumentationFile>..\obj\Release\netstandard2.0\MediaManager.Forms.xml</DocumentationFile>
+    <NoWarn>;1591;1701;1702;1705;VSX1000;NU1603</NoWarn>
+    <LangVersion>Default</LangVersion>
+    <NoStdLib>false</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants>TRACE;PORTABLE;RELEASE;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.815419" />
     <Compile Remove="Platforms\**\*.cs" />
