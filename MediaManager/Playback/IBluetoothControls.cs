@@ -5,22 +5,22 @@ namespace MediaManager.Playback
     public interface IBluetoothControls
     {
         /// <summary>
-        /// If null, default action is to step backwards by MediaManager.StepSize (default 10 seconds)
+        /// If null, default action is to step backwards by MediaManager.StepSize (default 15 seconds)
         /// </summary>
         Action SkipBackwardImpl { get; set; }
 
         /// <summary>
-        /// If null, default action is to step forwards by MediaManager.StepSize (default 10 seconds)
+        /// If null, default action is to step forwards by MediaManager.StepSize (default 15 seconds)
         /// </summary>
         Action SkipForwardImpl { get; set; }
 
         /// <summary>
-        /// If null, default action is to step backwards by MediaManager.StepSize (default 10 seconds)
+        /// If null, default action is to step backwards by MediaManager.StepSize (default 15 seconds)
         /// </summary>
         Action SeekBackwardImpl { get; set; }
 
         /// <summary>
-        /// If null, default action is to step forwards by MediaManager.StepSize (default 10 seconds)
+        /// If null, default action is to step forwards by MediaManager.StepSize (default 15 seconds)
         /// </summary>
         Action SeekForwardImpl { get; set; }
 

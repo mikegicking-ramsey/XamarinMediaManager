@@ -35,7 +35,7 @@ namespace MediaManager
 
         public static double TimerInterval { get; set; } = 1000;
 
-        protected TimeSpan _stepSize = TimeSpan.FromSeconds(10);
+        protected TimeSpan _stepSize = TimeSpan.FromSeconds(15);
         public virtual TimeSpan StepSize
         {
             get => _stepSize;
