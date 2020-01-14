@@ -16,6 +16,7 @@
     <PackageId>Plugin.MediaManager</PackageId>
     <Description>Cross platform Xamarin plugin to play and control Audio and Video</Description>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+    <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
   
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">

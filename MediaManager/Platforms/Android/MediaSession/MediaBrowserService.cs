@@ -98,7 +98,8 @@ namespace MediaManager.Platforms.Android.MediaSession
         protected virtual void PrepareMediaSession()
         {
             var mediaSession = MediaManager.MediaSession = new MediaSessionCompat(this, nameof(MediaBrowserService));
-            mediaSession.SetCallback(new MediaSessionCallback());
+            Console.WriteLine($"!!!! Starting up MediaSession with Callback.");
+            MediaManager.MediaSession.SetCallback(new MediaSessionCallback());
             mediaSession.SetSessionActivity(MediaManager.SessionActivityPendingIntent);
             mediaSession.Active = true;
 
@@ -152,7 +153,7 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override StartCommandResult OnStartCommand(Intent startIntent, StartCommandFlags flags, int startId)
         {
-            Console.WriteLine($"!!!! Starting up MediaBrowserService with startIntent = {startIntent.ToString()}");
+            Console.WriteLine($"!!!! Starting up MediaBrowserService with startIntent = {startIntent.Action.ToString()}");
             if (startIntent != null)
             {
                 MediaButtonReceiver.HandleIntent(MediaManager.MediaSession, startIntent);
