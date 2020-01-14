@@ -1,11 +1,11 @@
 ﻿using System;
 namespace MediaManager.Playback
 {
-    public class BluetoothControls : IBluetoothControls
+    public class MediaControls : IMediaControls
     {
         private IMediaManager _mediaManager = CrossMediaManager.Current;
 
-        public BluetoothControls()
+        public MediaControls()
         {
         }
 
@@ -34,6 +34,8 @@ namespace MediaManager.Playback
         public Action ShuffleImpl { get; set; }
 
         public Action RepeatImpl { get; set; }
+
+        public Func<object, bool> MediaButtonEventImpl { get; set; }
 
         #endregion
 

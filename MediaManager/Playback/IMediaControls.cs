@@ -2,7 +2,7 @@
 
 namespace MediaManager.Playback
 {
-    public interface IBluetoothControls
+    public interface IMediaControls
     {
         /// <summary>
         /// If null, default action is to step backwards by MediaManager.StepSize (default 15 seconds)
@@ -63,5 +63,16 @@ namespace MediaManager.Playback
         /// If null, default action is to toggle the repeat flag
         /// </summary>
         Action RepeatImpl { get; set; }
+
+        /// <summary>
+        /// Overrides the OnMediaButtonEvent Handler for Android. For iOS, please use the other fields in this class.
+        /// <para>
+        /// intent: The Android.Content.Intent of the MediaButtonEvent
+        /// </para>
+        /// </summary>
+        /// <remarks>
+        /// The OnMediaButtonEvent does not exist for iOS.
+        /// </remarks>
+        Func<object, bool> MediaButtonEventImpl { get; set; }
     }
 }

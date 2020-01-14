@@ -74,10 +74,10 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Compile Update="Playback\BluetoothControls.cs">
+    <Compile Update="Playback\MediaControls.cs">
       <SubType></SubType>
     </Compile>
-    <Compile Update="Playback\IBluetoothControls.cs">
+    <Compile Update="Playback\IMediaControls.cs">
       <SubType></SubType>
     </Compile>
   </ItemGroup>

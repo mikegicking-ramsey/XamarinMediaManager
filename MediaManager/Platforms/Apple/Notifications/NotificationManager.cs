@@ -161,9 +161,9 @@ namespace MediaManager.Platforms.Apple.Notifications
 
         protected virtual MPRemoteCommandHandlerStatus SkipBackwardCommand(MPRemoteCommandEvent arg)
         {
-            if (MediaManager.BluetoothControls.SkipBackwardImpl != null)
+            if (MediaManager.MediaControls.SkipBackwardImpl != null)
             {
-                MediaManager.BluetoothControls.SkipBackwardImpl.Invoke();
+                MediaManager.MediaControls.SkipBackwardImpl.Invoke();
             }
             else
             {
@@ -174,9 +174,9 @@ namespace MediaManager.Platforms.Apple.Notifications
 
         protected virtual MPRemoteCommandHandlerStatus SkipForwardCommand(MPRemoteCommandEvent arg)
         {
-            if (MediaManager.BluetoothControls.SkipForwardImpl != null)
+            if (MediaManager.MediaControls.SkipForwardImpl != null)
             {
-                MediaManager.BluetoothControls.SkipForwardImpl.Invoke();
+                MediaManager.MediaControls.SkipForwardImpl.Invoke();
             }
             else
             {
@@ -187,9 +187,9 @@ namespace MediaManager.Platforms.Apple.Notifications
 
         protected virtual MPRemoteCommandHandlerStatus StopCommand(MPRemoteCommandEvent arg)
         {
-            if (MediaManager.BluetoothControls.StopImpl != null)
+            if (MediaManager.MediaControls.StopImpl != null)
             {
-                MediaManager.BluetoothControls.StopImpl.Invoke();
+                MediaManager.MediaControls.StopImpl.Invoke();
             }
             else
             {
@@ -200,9 +200,9 @@ namespace MediaManager.Platforms.Apple.Notifications
 
         protected virtual MPRemoteCommandHandlerStatus SeekForwardCommand(MPRemoteCommandEvent arg)
         {
-            if (MediaManager.BluetoothControls.SeekForwardImpl != null)
+            if (MediaManager.MediaControls.SeekForwardImpl != null)
             {
-                MediaManager.BluetoothControls.SeekForwardImpl.Invoke();
+                MediaManager.MediaControls.SeekForwardImpl.Invoke();
             }
             else
             {
@@ -213,9 +213,9 @@ namespace MediaManager.Platforms.Apple.Notifications
 
         protected virtual MPRemoteCommandHandlerStatus SeekBackwardCommand(MPRemoteCommandEvent arg)
         {
-            if (MediaManager.BluetoothControls.SeekBackwardImpl != null)
+            if (MediaManager.MediaControls.SeekBackwardImpl != null)
             {
-                MediaManager.BluetoothControls.SeekBackwardImpl.Invoke();
+                MediaManager.MediaControls.SeekBackwardImpl.Invoke();
             }
             else
             {
@@ -226,9 +226,9 @@ namespace MediaManager.Platforms.Apple.Notifications
 
         protected virtual MPRemoteCommandHandlerStatus PreviousCommand(MPRemoteCommandEvent arg)
         {
-            if (MediaManager.BluetoothControls.PreviousImpl != null)
+            if (MediaManager.MediaControls.PreviousImpl != null)
             {
-                MediaManager.BluetoothControls.PreviousImpl.Invoke();
+                MediaManager.MediaControls.PreviousImpl.Invoke();
             }
             else
             {
@@ -239,9 +239,9 @@ namespace MediaManager.Platforms.Apple.Notifications
 
         protected virtual MPRemoteCommandHandlerStatus PauseCommand(MPRemoteCommandEvent arg)
         {
-            if (MediaManager.BluetoothControls.PauseImpl != null)
+            if (MediaManager.MediaControls.PauseImpl != null)
             {
-                MediaManager.BluetoothControls.PauseImpl.Invoke();
+                MediaManager.MediaControls.PauseImpl.Invoke();
             }
             else
             {
@@ -252,9 +252,9 @@ namespace MediaManager.Platforms.Apple.Notifications
 
         protected virtual MPRemoteCommandHandlerStatus NextCommand(MPRemoteCommandEvent arg)
         {
-            if (MediaManager.BluetoothControls.NextImpl != null)
+            if (MediaManager.MediaControls.NextImpl != null)
             {
-                MediaManager.BluetoothControls.NextImpl.Invoke();
+                MediaManager.MediaControls.NextImpl.Invoke();
             }
             else
             {
@@ -265,9 +265,9 @@ namespace MediaManager.Platforms.Apple.Notifications
 
         protected virtual MPRemoteCommandHandlerStatus ShuffleCommand(MPRemoteCommandEvent arg)
         {
-            if (MediaManager.BluetoothControls.ShuffleImpl != null)
+            if (MediaManager.MediaControls.ShuffleImpl != null)
             {
-                MediaManager.BluetoothControls.ShuffleImpl.Invoke();
+                MediaManager.MediaControls.ShuffleImpl.Invoke();
             }
             else
             {
@@ -278,9 +278,9 @@ namespace MediaManager.Platforms.Apple.Notifications
 
         protected virtual MPRemoteCommandHandlerStatus RepeatCommand(MPRemoteCommandEvent arg)
         {
-            if (MediaManager.BluetoothControls.RepeatImpl != null)
+            if (MediaManager.MediaControls.RepeatImpl != null)
             {
-                MediaManager.BluetoothControls.RepeatImpl.Invoke();
+                MediaManager.MediaControls.RepeatImpl.Invoke();
             }
             else
             {
@@ -291,9 +291,9 @@ namespace MediaManager.Platforms.Apple.Notifications
 
         protected virtual MPRemoteCommandHandlerStatus PlayCommand(MPRemoteCommandEvent arg)
         {
-            if (MediaManager.BluetoothControls.PlayImpl != null)
+            if (MediaManager.MediaControls.PlayImpl != null)
             {
-                MediaManager.BluetoothControls.PlayImpl.Invoke();
+                MediaManager.MediaControls.PlayImpl.Invoke();
             }
             else
             {
@@ -304,9 +304,9 @@ namespace MediaManager.Platforms.Apple.Notifications
 
         protected virtual MPRemoteCommandHandlerStatus PlayPauseCommand(MPRemoteCommandEvent arg)
         {
-            if (MediaManager.BluetoothControls.PlayPauseImpl != null)
+            if (MediaManager.MediaControls.PlayPauseImpl != null)
             {
-                MediaManager.BluetoothControls.PlayPauseImpl.Invoke();
+                MediaManager.MediaControls.PlayPauseImpl.Invoke();
             }
             else
             {

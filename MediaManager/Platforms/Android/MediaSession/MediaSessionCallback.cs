@@ -58,13 +58,10 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnFastForward()
         {
-            if (MediaManager.BluetoothControls.SeekForwardImpl != null)
+            if (MediaManager.MediaControls.SeekForwardImpl != null || MediaManager.MediaControls.SkipForwardImpl != null)
             {
-                MediaManager.BluetoothControls.SeekForwardImpl.Invoke();
-            }
-            else if (MediaManager.BluetoothControls.SkipForwardImpl != null)
-            {
-                MediaManager.BluetoothControls.SkipBackwardImpl.Invoke();
+                MediaManager.MediaControls.SeekForwardImpl?.Invoke();
+                MediaManager.MediaControls.SkipForwardImpl?.Invoke();
             }
             else
             {
@@ -74,13 +71,10 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnRewind()
         {
-            if (MediaManager.BluetoothControls.SeekBackwardImpl != null)
+            if (MediaManager.MediaControls.SeekBackwardImpl != null || MediaManager.MediaControls.SkipBackwardImpl != null)
             {
-                MediaManager.BluetoothControls.SeekBackwardImpl.Invoke();
-            }
-            else if (MediaManager.BluetoothControls.SkipBackwardImpl != null)
-            {
-                MediaManager.BluetoothControls.SkipBackwardImpl.Invoke();
+                MediaManager.MediaControls.SeekBackwardImpl?.Invoke();
+                MediaManager.MediaControls.SkipBackwardImpl?.Invoke();
             }
             else
             {
@@ -90,14 +84,21 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override bool OnMediaButtonEvent(Intent mediaButtonEvent)
         {
-            return OnMediaButtonEventImpl?.Invoke(mediaButtonEvent) ?? false;
+            if(MediaManager.MediaControls.MediaButtonEventImpl != null)
+            {
+                return MediaManager.MediaControls.MediaButtonEventImpl.Invoke(mediaButtonEvent);
+            }
+            else
+            {
+                return OnMediaButtonEventImpl?.Invoke(mediaButtonEvent) ?? false;
+            }
         }
 
         public override void OnPause()
         {
-            if (MediaManager.BluetoothControls.PauseImpl != null)
+            if (MediaManager.MediaControls.PauseImpl != null)
             {
-                MediaManager.BluetoothControls.PauseImpl.Invoke();
+                MediaManager.MediaControls.PauseImpl.Invoke();
             }
             else
             {
@@ -107,9 +108,9 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnPlay()
         {
-            if (MediaManager.BluetoothControls.PlayImpl != null)
+            if (MediaManager.MediaControls.PlayImpl != null)
             {
-                MediaManager.BluetoothControls.PlayImpl.Invoke();
+                MediaManager.MediaControls.PlayImpl.Invoke();
             }
             else
             {
@@ -194,9 +195,9 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnSkipToNext()
         {
-            if (MediaManager.BluetoothControls.NextImpl != null)
+            if (MediaManager.MediaControls.NextImpl != null)
             {
-                MediaManager.BluetoothControls.NextImpl.Invoke();
+                MediaManager.MediaControls.NextImpl.Invoke();
             }
             else
             {
@@ -206,9 +207,9 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnSkipToPrevious()
         {
-            if (MediaManager.BluetoothControls.PreviousImpl != null)
+            if (MediaManager.MediaControls.PreviousImpl != null)
             {
-                MediaManager.BluetoothControls.PreviousImpl.Invoke();
+                MediaManager.MediaControls.PreviousImpl.Invoke();
             }
             else
             {
@@ -223,9 +224,9 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnStop()
         {
-            if (MediaManager.BluetoothControls.StopImpl != null)
+            if (MediaManager.MediaControls.StopImpl != null)
             {
-                MediaManager.BluetoothControls.StopImpl.Invoke();
+                MediaManager.MediaControls.StopImpl.Invoke();
             }
             else
             {
