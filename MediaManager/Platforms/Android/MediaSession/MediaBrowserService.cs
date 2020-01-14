@@ -152,6 +152,7 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override StartCommandResult OnStartCommand(Intent startIntent, StartCommandFlags flags, int startId)
         {
+            Console.WriteLine($"!!!! Starting up MediaBrowserService with startIntent = {startIntent.ToString()}");
             if (startIntent != null)
             {
                 MediaButtonReceiver.HandleIntent(MediaManager.MediaSession, startIntent);

@@ -33,11 +33,13 @@
     <DocumentationFile>..\obj\Release\netstandard2.0\MediaManager.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Remove="Platforms\**\*.cs" />
     <None Include="Platforms\**\*.cs" />
     <None Include="Resources\*.cs" />
     <Compile Remove="Resources\*.cs" />
-    <None Include="readme.txt" pack="true" PackagePath="." />
     <Compile Remove="Platforms\Android\MediaSession\MediaSessionCallback.cs" />
   </ItemGroup>
 
