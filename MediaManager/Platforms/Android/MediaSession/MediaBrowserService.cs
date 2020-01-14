@@ -98,6 +98,7 @@ namespace MediaManager.Platforms.Android.MediaSession
         protected virtual void PrepareMediaSession()
         {
             var mediaSession = MediaManager.MediaSession = new MediaSessionCompat(this, nameof(MediaBrowserService));
+            mediaSession.SetCallback(new MediaSessionCallback());
             mediaSession.SetSessionActivity(MediaManager.SessionActivityPendingIntent);
             mediaSession.Active = true;
 

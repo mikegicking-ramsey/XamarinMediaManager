@@ -58,6 +58,7 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnFastForward()
         {
+            Console.WriteLine("!!!!! MEDIA BUTTON PRESSED: Fast Forward !!!!!");
             if (MediaManager.MediaControls.SeekForwardImpl != null || MediaManager.MediaControls.SkipForwardImpl != null)
             {
                 MediaManager.MediaControls.SeekForwardImpl?.Invoke();
@@ -71,6 +72,7 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnRewind()
         {
+            Console.WriteLine("!!!!! MEDIA BUTTON PRESSED: Rewind !!!!!");
             if (MediaManager.MediaControls.SeekBackwardImpl != null || MediaManager.MediaControls.SkipBackwardImpl != null)
             {
                 MediaManager.MediaControls.SeekBackwardImpl?.Invoke();
@@ -84,7 +86,8 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override bool OnMediaButtonEvent(Intent mediaButtonEvent)
         {
-            if(MediaManager.MediaControls.MediaButtonEventImpl != null)
+            Console.WriteLine("!!!!! MEDIA BUTTON PRESSED: Media Button !!!!!");
+            if (MediaManager.MediaControls.MediaButtonEventImpl != null)
             {
                 return MediaManager.MediaControls.MediaButtonEventImpl.Invoke(mediaButtonEvent);
             }
@@ -96,6 +99,7 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnPause()
         {
+            Console.WriteLine("!!!!! MEDIA BUTTON PRESSED: Pause !!!!!");
             if (MediaManager.MediaControls.PauseImpl != null)
             {
                 MediaManager.MediaControls.PauseImpl.Invoke();
@@ -108,6 +112,7 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnPlay()
         {
+            Console.WriteLine("!!!!! MEDIA BUTTON PRESSED: Play !!!!!");
             if (MediaManager.MediaControls.PlayImpl != null)
             {
                 MediaManager.MediaControls.PlayImpl.Invoke();
@@ -195,6 +200,7 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnSkipToNext()
         {
+            Console.WriteLine("!!!!! MEDIA BUTTON PRESSED: Next !!!!!");
             if (MediaManager.MediaControls.NextImpl != null)
             {
                 MediaManager.MediaControls.NextImpl.Invoke();
@@ -207,6 +213,7 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnSkipToPrevious()
         {
+            Console.WriteLine("!!!!! MEDIA BUTTON PRESSED: Previous !!!!!");
             if (MediaManager.MediaControls.PreviousImpl != null)
             {
                 MediaManager.MediaControls.PreviousImpl.Invoke();
@@ -224,6 +231,7 @@ namespace MediaManager.Platforms.Android.MediaSession
 
         public override void OnStop()
         {
+            Console.WriteLine("!!!!! MEDIA BUTTON PRESSED: Stop !!!!!");
             if (MediaManager.MediaControls.StopImpl != null)
             {
                 MediaManager.MediaControls.StopImpl.Invoke();
